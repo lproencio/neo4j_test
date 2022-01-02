@@ -5,7 +5,7 @@ const UserController = require("./controllers/UserController");
 const routes = express.Router();
 
 routes.get("/", (req, res) => {
-  return res.json({ message: "api is here" });
+  res.sendFile(path.join(__dirname, "./build/index.html"));
 });
 
 routes.post("/user", UserController.create);
